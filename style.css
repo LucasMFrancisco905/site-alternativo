@@ -6,52 +6,37 @@
 :root {
     /* Paleta de cores */
     --smarter-blue: #6D7EB0;
-    --smart-blue: #586BA4;
-    --french-blue: #324376;
+    /* --smart-blue: #586BA4; */
+    --french-blue: #424356;
     --frencher-blue: #182139;
-    --light-gold: #F5DD90;
-    --tangerine-dream: #F68E5F;
-    --vibrant-coral: #F76C5E;
+    --background-blue: #324376;
+    --light-gold: #FFBD90;
+    --tangerine-dream: #FF9E9F;
+    --vibrant-coral: #FFAEAF;
+    --dark-amethyst: #5643AD;
+    --smart-blue-transparent: #586BA4A0;
+    --shadow: #000000A0;
 }
 
-body {
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    background-color: white;
-}
-h1, h2 {
-    color: white;
-}
-header {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    padding: 8px 16px;
-    text-align: left;
-    background-color: var(--frencher-blue);
-}
-header h1,h2 {
-    margin-left: 12px;
-    word-spacing: 12px;
-}
-header img {
-    margin: 0px 16px;
-    border-radius: 100%;
-    width: 128px;
-    height: 128px;
-    border: 3px solid var(--french-blue);
-}
 .flexspan {
     display: flex;
     padding-bottom: 8px;
 }
-.linkspan {
-    max-height: 128px;
-    margin-right: 12px;
-    line-height: 160%;
-    border-radius: 32px;
-    width: 220px;
-    padding-left: 32px;
-    background-color: #324376
+main .flexspan {
+    display: flex;
+    padding: 12px 12px 12px 12px;
+}
+body {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    background-color: white;
+    background-image: url(/images/auragalatica.avif);
+    background-size: 100%;
+}
+h1, h2, p, span {
+    color: white;
+}
+p {
+    font-size: large;
 }
 a:link {
     color: lightblue;
@@ -65,37 +50,91 @@ a:hover {
 a:active {
     color: coral;
 }
+header {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 8px 16px;
+    text-align: left;
+    background-image: linear-gradient(to left, var(--dark-amethyst), var(--frencher-blue));
+    border-top: 3px solid var(--vibrant-coral);
+}
+header h1,h2 {
+    margin-left: 12px;
+    word-spacing: 12px;
+}
+header img {
+    margin: 0px 16px;
+    border-radius: 100%;
+    width: 128px;
+    height: 128px;
+    border: 3px solid var(--vibrant-coral);
+    box-shadow: 0px 2px 10px var(--shadow);
+}
+.linkspan {
+    max-height: 128px;
+    margin-right: 12px;
+    line-height: 160%;
+    border-radius: 32px;
+    width: 232px;
+    padding-left: 32px;
+    background-color: var(--smart-blue-transparent);
+    box-shadow: 0px 2px 10px var(--shadow);
+}
 nav {
     text-align: center;
     padding: 8px 0px;
     margin-bottom: 12px;
-    background-color: var(--smart-blue);
-    border-top: 6px solid var(--french-blue);
-    border-bottom: 6px solid var(--french-blue);
+    border-radius: 0px 0px 24px 24px;
+    background-color: var(--light-gold);
+    border-top: 3px solid var(--tangerine-dream);
+    border-bottom: 3px solid var(--tangerine-dream);
+    box-shadow: 0px 2px 10px var(--shadow);
+    line-height: 32px;
 }
 nav a {
-    padding: 4px 12px;  
-    margin: 0px 12px;
-    background-color: var(--french-blue);
-    border-radius: 25%;
+    padding: 2px 8px;  
+    margin: 4px 8px;
+    background-color: var(--light-gold);
+    border: 3px solid var(--vibrant-coral);
+    box-shadow: 0px 2px 10px var(--shadow);
 }
 main {
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
     margin: 0px auto;
     padding: 12px 0px;
     width: 100%;
 }
 section {
-    background-color: var(--french-blue);
-    border-radius: 24px;
+    background-image: linear-gradient(to left, var(--dark-amethyst), var(--frencher-blue));
+    border-radius: 24px 0px;
     padding: 8px;
+    box-shadow: 0px 2px 10px var(--shadow);
+    border-top: 2px solid var(--vibrant-coral);
 }
-.sectionleft {
+main div p {
+    margin: 4px 12px 8px;
+}
+.divleft {
+    background-color: var(--smart-blue-transparent);
+    border-radius: 24px 0px;
     margin: 0px 2%;
     width: 75%;
+    border-bottom: 4px solid var(--vibrant-coral);
 }
-.sectionright {
+.divright {
+    background-color: var(--smart-blue-transparent);
+    border-radius: 24px 0px;
     margin: 0px 2%;
     width: 25%;
+    border-bottom: 4px solid var(--vibrant-coral);
+}
+.myimg {
+    width: 256px;
+    height: 256px;
+    border-radius: 100%;
+    border: 3px solid var(--vibrant-coral);
+    box-shadow: 0px 2px 10px var(--shadow);
 }
