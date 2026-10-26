@@ -18,11 +18,12 @@
     --shadow: #000000A0;
 }
 
-.flexspan {
+.flexdiv {
     display: flex;
     padding-bottom: 8px;
+    justify-content: space-between;
 }
-main .flexspan {
+main .flexdiv {
     display: flex;
     padding: 12px 12px 12px 12px;
 }
@@ -31,8 +32,11 @@ body {
     background-color: white;
     background-image: url(/images/auragalatica.avif);
     background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
 }
-h1, h2, p, span {
+h1, h2, p, div, span {
     color: white;
 }
 p {
@@ -71,7 +75,7 @@ header img {
     border: 3px solid var(--vibrant-coral);
     box-shadow: 0px 2px 10px var(--shadow);
 }
-.linkspan {
+.linkdiv {
     max-height: 128px;
     margin-right: 12px;
     line-height: 160%;
@@ -98,6 +102,11 @@ nav a {
     background-color: var(--light-gold);
     border: 3px solid var(--vibrant-coral);
     box-shadow: 0px 2px 10px var(--shadow);
+    white-space: nowrap;
+    text-decoration: none;
+}
+nav a:hover {
+    background-color: var(--vibrant-coral);
 }
 main {
     display: flex;
@@ -105,6 +114,7 @@ main {
     align-items: flex-start;
     margin: 0px auto;
     padding: 12px 0px;
+    margin-bottom: 12px;
     width: 100%;
 }
 section {
@@ -113,28 +123,76 @@ section {
     padding: 8px;
     box-shadow: 0px 2px 10px var(--shadow);
     border-top: 2px solid var(--vibrant-coral);
+    word-wrap: break-word;
 }
 main div p {
     margin: 4px 12px 8px;
 }
-.divleft {
+.maindiv {
     background-color: var(--smart-blue-transparent);
     border-radius: 24px 0px;
     margin: 0px 2%;
     width: 75%;
     border-bottom: 4px solid var(--vibrant-coral);
 }
-.divright {
+aside {
     background-color: var(--smart-blue-transparent);
     border-radius: 24px 0px;
     margin: 0px 2%;
     width: 25%;
     border-bottom: 4px solid var(--vibrant-coral);
 }
+aside p {
+    margin: 4px 12px 8px;
+}
 .myimg {
-    width: 256px;
-    height: 256px;
+    width: 25%;
+    height: 25%;
     border-radius: 100%;
     border: 3px solid var(--vibrant-coral);
     box-shadow: 0px 2px 10px var(--shadow);
+    max-width: 256px;
+    max-height: 256px;
+}
+.motivacional-img {
+    width: 128px;
+    height: 128px;
+    border-radius: 100%;
+    border: 3px solid var(--vibrant-coral);
+    box-shadow: 0px 2px 10px var(--shadow);
+    margin: 0px 3px;
+}
+.redtext {
+    color: #ff0000;
+}
+footer {
+    display: flex;
+    justify-content: space-between;
+    background-image: linear-gradient(to left, var(--dark-amethyst), var(--frencher-blue));
+    border-top: 3px solid var(--vibrant-coral);
+    padding: 12px;
+}
+.the-final-wainu {
+    width: 96px;
+    height: 96px;
+    border-radius: 100%;
+    border: 3px solid var(--vibrant-coral);
+    box-shadow: 0px 2px 10px var(--shadow);
+}
+footer div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.final-text {
+    font-size: smaller;
+}
+.side-div {
+    margin: 6px;
+    display: flex;
+    justify-content: center;
+}
+.side-div img {
+    width: 100%;
+    height: 100%;
 }
