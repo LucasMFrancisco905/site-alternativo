@@ -1,0 +1,27 @@
+:root {
+    --bounce-bezier: cubic-bezier(.36,2.06,.27,.68);
+}
+
+header {
+    display:block;
+    text-align: center;
+}
+.title-card {
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    width: 319px;
+    height: 154px;
+    animation: surgir 4s var(--bounce-bezier) both;
+}
+@keyframes surgir {
+    from {
+        opacity: 0;
+        scale: -300%;
+        rotate: 360deg;
+    }
+    to {
+        opacity: 1;
+        scale: 100%;
+    }
+}
