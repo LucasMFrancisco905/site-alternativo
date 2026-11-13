@@ -5,17 +5,16 @@
 }
 
 :root {
+    --main-color: #5643AD;
+    --main-color-2: #182139;
+    --list-color: #424356;
     /* Paleta de cores */
-    --smarter-blue: #6D7EB0;
     /* --smart-blue: #586BA4; */
-    --french-blue: #424356;
-    --frencher-blue: #182139;
-    --background-blue: #324376;
-    --light-gold: #FFBD90;
-    --tangerine-dream: #FF9E9F;
-    --vibrant-coral: #FFAEAF;
-    --dark-amethyst: #5643AD;
-    --smart-blue-transparent: #586BA4A0;
+    --table-background: #324376;
+    --outline: #3A9A70;
+    --outline-2: #2DCA7A;
+    --secondary-fill: #127A52; 
+    --content-background: #586BA4A0;
     --shadow: #000000A0;
 }
 
@@ -23,10 +22,12 @@
     display: flex;
     padding-bottom: 8px;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 main .flexdiv {
     display: flex;
     padding: 12px 12px 12px 12px;
+    flex-wrap:nowrap;
 }
 body {
     font-family:Verdana, Geneva, Tahoma, sans-serif;
@@ -36,6 +37,7 @@ body {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
+    min-width: 360px;
 }
 h1, h2, p, div, span {
     color: white;
@@ -61,8 +63,9 @@ header {
     flex-wrap: wrap;
     padding: 8px 16px;
     text-align: left;
-    background-image: linear-gradient(to left, var(--dark-amethyst), var(--frencher-blue));
-    border-top: 3px solid var(--vibrant-coral);
+    background-image: linear-gradient(to left, var(--main-color), var(--main-color-2));
+    border-top: 2px solid var(--outline);
+    border-bottom: 2px solid var(--outline);
 }
 header h1,h2 {
     margin-left: 12px;
@@ -73,41 +76,40 @@ header img {
     border-radius: 50%;
     width: 128px;
     height: 128px;
-    border: 3px solid var(--vibrant-coral);
+    border: 3px solid var(--outline);
     box-shadow: 0px 2px 10px var(--shadow);
 }
 .linkdiv {
     max-height: 128px;
     margin-right: 12px;
     line-height: 160%;
-    border-radius: 32px;
+    border-radius: 18px 0px;
     width: 276px;
     padding-left: 32px;
-    background-color: var(--smart-blue-transparent);
+    background-color: var(--content-background);
     box-shadow: 0px 2px 10px var(--shadow);
 }
 nav {
     text-align: center;
+    margin: 8px;
     padding: 8px 0px;
     margin-bottom: 12px;
-    border-radius: 0px 0px 24px 24px;
-    background-color: var(--light-gold);
-    border-top: 3px solid var(--tangerine-dream);
-    border-bottom: 3px solid var(--tangerine-dream);
+    background-color: var(--secondary-fill);
+    border: 2px solid var(--outline-2);
     box-shadow: 0px 2px 10px var(--shadow);
     line-height: 32px;
 }
 nav a {
-    padding: 2px 8px;  
+    padding: 6px 12px;  
     margin: 4px 8px;
-    background-color: var(--light-gold);
-    border: 3px solid var(--vibrant-coral);
-    box-shadow: 0px 2px 10px var(--shadow);
+    background-color: var(--secondary-fill);
+    border: 2px solid var(--outline);
+    box-shadow: 0px 2px 6px var(--shadow);
     white-space: nowrap;
     text-decoration: none;
 }
 nav a:hover {
-    background-color: var(--vibrant-coral);
+    background-color: var(--outline);
 }
 main {
     display: flex;
@@ -116,32 +118,31 @@ main {
     margin: 0px auto;
     padding: 12px 0px;
     margin-bottom: 12px;
-    width: 100%;
 }
 section {
-    background-image: linear-gradient(to left, var(--dark-amethyst), var(--frencher-blue));
+    background-image: linear-gradient(to left, var(--main-color), var(--main-color-2));
     border-radius: 24px 0px;
     padding: 8px;
     box-shadow: 0px 2px 10px var(--shadow);
-    border-top: 2px solid var(--vibrant-coral);
+    border-top: 2px solid var(--outline);
     word-wrap: break-word;
 }
 main div p {
     margin: 4px 12px 8px;
 }
 .maindiv {
-    background-color: var(--smart-blue-transparent);
+    background-color: var(--content-background);
     border-radius: 24px 0px;
     margin: 0px 2%;
-    width: 75%;
-    border-bottom: 4px solid var(--vibrant-coral);
+    border-bottom: 4px solid var(--outline);
+    flex: 4;
 }
 aside {
-    background-color: var(--smart-blue-transparent);
+    background-color: var(--content-background);
     border-radius: 24px 0px;
     margin: 0px 2%;
-    width: 25%;
-    border-bottom: 4px solid var(--vibrant-coral);
+    border-bottom: 4px solid var(--outline);
+    flex: 1;
 }
 aside p {
     margin: 4px 12px 8px;
@@ -150,7 +151,7 @@ aside p {
     width: 25%;
     height: 25%;
     border-radius: 50%;
-    border: 3px solid var(--vibrant-coral);
+    border: 3px solid var(--outline);
     box-shadow: 0px 2px 10px var(--shadow);
     max-width: 256px;
     max-height: 256px;
@@ -159,7 +160,7 @@ aside p {
     width: 128px;
     height: 128px;
     border-radius: 50%;
-    border: 3px solid var(--vibrant-coral);
+    border: 3px solid var(--outline);
     box-shadow: 0px 2px 10px var(--shadow);
     margin: 0px 3px;
 }
@@ -169,15 +170,15 @@ aside p {
 footer {
     display: flex;
     justify-content: space-between;
-    background-image: linear-gradient(to left, var(--dark-amethyst), var(--frencher-blue));
-    border-top: 3px solid var(--vibrant-coral);
+    background-image: linear-gradient(to left, var(--main-color), var(--main-color-2));
+    border-top: 3px solid var(--outline);
     padding: 12px;
 }
 .the-final-wainu {
     width: 96px;
     height: 96px;
     border-radius: 50%;
-    border: 3px solid var(--vibrant-coral);
+    border: 3px solid var(--outline);
     box-shadow: 0px 2px 10px var(--shadow);
 }
 footer div {
@@ -199,8 +200,8 @@ footer div {
 }
 table {
     border-collapse: collapse;
-    background-color: var(--frencher-blue);
-    border: 2px solid var(--light-gold);
+    background-color: var(--main-color-2);
+    border: 2px solid var(--secondary-fill);
     border-radius: 16px;
     margin: auto;
 }
@@ -208,7 +209,7 @@ th, td{
     padding: 8px 24px;
 }
 th {
-    background-color: var(--background-blue);
+    background-color: var(--table-background);
 }
 td img {
     margin: 8px;
@@ -245,7 +246,7 @@ form {
     margin: 8px 8px 0px;
     padding: 12px;
     border-radius: 12px;
-    background-color: var(--frencher-blue);
+    background-color: var(--main-color-2);
 }
 form label {
     display: block;
@@ -266,7 +267,7 @@ form button {
     cursor: pointer;
 }
 form button:hover {
-    background-color: var(--vibrant-coral);
+    background-color: var(--outline);
 }
 form button:active {
     transform: scale(.9);
@@ -276,7 +277,7 @@ ol {
     width: 100%;
     list-style-position: inside;
     margin: 6px 6px;
-    background-image: linear-gradient(225deg, var(--dark-amethyst), var(--vibrant-coral));
+    background-image: linear-gradient(225deg, var(--main-color), var(--outline));
     border-radius: 24px;
     padding: 3px;
 }
@@ -284,8 +285,19 @@ ol li {
     font-family: 'Courier New', Courier, monospace;
     font-size: 24px;
     text-align: center;
-    background-image: linear-gradient(315deg, var(--french-blue), var(--frencher-blue));
+    background-image: linear-gradient(315deg, var(--list-color), var(--main-color-2));
     padding: 24px 0px;
     margin: 6px 0px;
     border-radius: 24px;
+}
+@media (max-width: 640px) {
+    body {
+        zoom: 0.85;
+    }
+    main {
+        flex-direction: column
+    }
+    aside {
+        margin: 24px 2%;
+    }
 }
