@@ -97,7 +97,7 @@ nav {
     background-color: var(--secondary-fill);
     border: 2px solid var(--outline-2);
     box-shadow: 0px 2px 10px var(--shadow);
-    line-height: 32px;
+    line-height: 40px;
 }
 nav a {
     padding: 6px 12px;  

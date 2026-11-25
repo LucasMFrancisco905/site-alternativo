@@ -54,17 +54,24 @@ header {
 .icone-controle::before {
     content: "\F686";
 }
-.flexdiv img {
+.corsa {
+    position: relative;
+    padding: 256px;
+    overflow: hidden;
+}
+.corsa img {
+    position: absolute;
+    top: 0;
     transform-origin: bottom center;
     scale: -1 1;
     animation: corsa 3s ease-in-out infinite normal;
 }
 .plane-div {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
 }
 .plane-div article {
     margin: 12px 12px;
-    flex: 1;
     padding: 24px;
     border: 1px solid var(--outline);
     border-top: 8px solid var(--outline);
@@ -98,6 +105,7 @@ header {
     margin: 12px 20vw;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
     grid-template-areas: 
     "main1 main1 s1"
     "main1 main1 s2"
@@ -107,12 +115,31 @@ header {
     "main3 main3 s6";
 }
 .galeria figure {
-    padding: 12px;
+    position: relative;
+    overflow: hidden;
 }
 .galeria figure img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transform: scale(1);
+    transition: transform 0.2s;
+}
+.galeria figure:hover img {
+    transform: scale(1.1);
+}
+.galeria figure figcaption {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    padding: 10px 14px;
+    display: block;
+    transform: translateY(100%);
+    transition: transform 0.2s;
+}
+.galeria figure:hover figcaption {
+    transform: translate(0);
 }
 .galeria figure:nth-child(1) {grid-area: main1;}
 .galeria figure:nth-child(2) {grid-area: s1;}
@@ -123,6 +150,79 @@ header {
 .galeria figure:nth-child(7) {grid-area: main3;}
 .galeria figure:nth-child(8) {grid-area: s5;}
 .galeria figure:nth-child(9) {grid-area: s6;}
+
+.videos {
+    justify-content: space-around;
+}
+.videos div {
+    margin: 18px;
+}
+.videos div iframe {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+}
+.pessoas {
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    gap: 64px;
+}
+.pessoas div {
+    margin: 12px 0px;
+    text-align: center;
+}
+.pessoas div img {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.frases {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+}
+.frases blockquote {
+    padding: 6px 32px 16px;
+    margin: 16px;
+    background-color: #5f5faf3f;
+    border-radius: 12px;
+}
+.frases blockquote::before {
+    font-family: "bootstrap-icons";
+    font-size: 2.2rem;
+    content: "\F6B0";
+}
+.frases blockquote p {
+    margin-bottom: 6px;
+}
+.link-contato {
+    display: flex;
+    justify-content: center;
+    background-image: url("imagens/resenhometro.gif");
+    background-size: contain;
+    padding: 200px;
+}
+.link-contato a {
+    font-size: 4rem;
+    padding: 20px 32px;
+    background-color: var(--main-color);
+    border-radius: 24px;
+    text-decoration: none;
+    color: white;
+    transition: transform 0.2s var(--bounce-bezier);
+}
+.link-contato a:hover {
+    transform: scale(1.1);
+}
+.link-contato a:active {
+    transform: scale(0.9);
+}
+.link-contato a::before {
+    font-family: "bootstrap-icons";
+    content: "\F618";
+    padding: 12px;
+}
 @keyframes surgir {
     from {
         opacity: 0; 
@@ -139,8 +239,8 @@ header {
         transform: translateX(256px);
         scale: -1 1.1;
     }
-    50% {
-        transform: translateX(-2048px);
+    45% {
+        transform: translateX(-220vh);
         scale: -1 0.6;
     }
     65% {
